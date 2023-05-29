@@ -10,7 +10,7 @@ export default function Header(){
         <>
             <div className="w-full py-5 px-8 sm:py-7 sm:px-14 bg-gray-50 dark:bg-[#16181d]">
                 <div className="max-w-5xl ml-auto mr-auto flex justify-between items-center">
-                    <p className='text-2xl sm:text-3xl font-bold dark:text-gray-50'>BreezeOS</p>
+                    <p className='text-2xl sm:text-3xl font-bold text-gray-700 dark:text-gray-100'>BreezeOS</p>
                     <div className='flex text-2xl sm:text-3xl'>
                         {themeDark ? <i className="fa-solid fa-sun-bright symbolic" onClick={() => dispatch(toggleDarkMode())}></i> : <i className="fa-solid fa-moon symbolic" onClick={() => dispatch(toggleDarkMode())}></i>}
                         <i className="fa-solid fa-bars ml-9 symbolic" onClick={() => dispatch(showNav(true))}></i>

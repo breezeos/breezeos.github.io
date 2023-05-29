@@ -9,7 +9,7 @@ export default function Footer(){
                     <i className="fa-brands fa-tiktok symbolic hover:text-gray-500 dark:hover:text-gray-300"></i>
                 </a>
             </div>
-            <p className="text-gray-400 font-light text-xs sm:text-sm">&copy; BreezeOS Community 2023 - 2023</p>
+            <p className="text-gray-400 font-light text-xs sm:text-sm">&copy; BreezeOS Community 2023 - {new Date().getFullYear()}</p>
         </div>
     )
 }
