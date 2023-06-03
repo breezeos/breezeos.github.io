@@ -1,48 +1,39 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { showNav } from '../reducers/nav';
+import { useTranslation } from "react-i18next";
 
 export default function Navigation(){
     const nav = useSelector(state => state.nav.active);
+    const { t } = useTranslation();
     const dispatch = useDispatch();
-
-    function useOutside(ref) {
-      useEffect(() => {
-        /**
-         * Alert if clicked on outside of element
-         */
-        function handleClickOutside(event) {
-          if (ref.current && !ref.current.contains(event.target)) {
-            dispatch(showNav(false));
-          }
-        }
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-          // Unbind the event listener on clean up
-          document.removeEventListener("mousedown", handleClickOutside);
-        };
-      }, [ref]);
-    }
-
-    const navRef = useRef(null);
-    useOutside(navRef);
 
     return (
         <div className={`bg-black fixed top-0 right-0 bottom-0 left-0 z-10 h-full transition-all duration-300 ${nav ? 'bg-opacity-60 pointer-events-auto' : 'bg-opacity-0 pointer-events-none'}`}>
-            <nav role="navigation" className={`bg-gray-200 dark:bg-gray-800 transition-all duration-300 w-fit h-full absolute ${nav ? 'right-0' : '-right-72'}`} ref={navRef}>
-                <ul className="px-5 py-14 pl-0" role="list">
-                    <li className="px-7 py-3 w-60 mt-2 text-sm sm:text-base cursor-pointer rounded-r-full rounded-br-full bg-sky-700 bg-opacity-40 font-bold text-sky-600">Home</li>
-                    <li className="px-7 py-3 w-56 mt-2 text-sm sm:text-base cursor-pointer font-light dark:text-gray-100" onClick={() => dispatch(showNav(false))}>
-                      <a href="#about">About</a>
-                    </li>
-                    <li className="px-7 py-3 w-56 mt-2 text-sm sm:text-base cursor-pointer font-light dark:text-gray-100" onClick={() => dispatch(showNav(false))}>
-                      <a href="https://breezeos.github.io/docs" target="_blank">Documentation</a>
-                    </li>
-                    <li className="px-7 py-3 w-56 mt-2 text-sm sm:text-base cursor-pointer font-light dark:text-gray-100" onClick={() => dispatch(showNav(false))}>
-                      <a href="https://bit.ly/breezeos" target="_blank">Try BreezeOS</a>
-                    </li>
+            <nav role="navigation" className={`bg-gray-50 dark:bg-gray-950 text-gray-950 dark:text-gray-50 transition-all duration-300 w-full h-full ${nav ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="w-full py-5 px-5 md:px-14 sticky top-0 z-10 border-b border-b-slate-300 dark:border-b-slate-900 bg-gray-50 dark:bg-gray-950">
+                <div className="ml-auto mr-auto flex justify-between items-center text-gray-950 dark:text-gray-100">
+                    <div className='w-8 h-8'></div>
+                    <p className='text-xl font-light md:mr-8'>BreezeOS</p>
+                    <i className='fa-light fa-xmark rounded-full flex justify-center items-center w-8 h-8 hover:bg-gray-950 hover:bg-opacity-10 hover:cursor-pointer dark:hover:bg-gray-100 dark:hover:bg-opacity-10' onClick={() => dispatch(showNav(false))}></i>
+                </div>
+              </div>
+              <div className="py-14 px-10">
+                <ul role="list">
+                  <li className="text-3xl font-bold mb-4 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
+                    <a href="/" onClick={() => dispatch(showNav(false))}>{t('header.home')}</a>
+                  </li>
+                  <li className="text-3xl font-bold mb-4 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
+                    <a href="#about" onClick={() => dispatch(showNav(false))}>{t('header.aboutUs')}</a>
+                  </li>
+                  <li className="text-3xl font-bold mb-4 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
+                    <a href="https://breezeos.github.io/docs" onClick={() => dispatch(showNav(false))}>{t('header.documentation')}</a>
+                  </li>
+                  <li className="text-3xl font-bold mb-4 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
+                    <a href="https://bit.ly/breezeos" onClick={() => dispatch(showNav(false))}>{t('header.try')}</a>
+                  </li>
                 </ul>
+              </div>
             </nav>
         </div>
     )

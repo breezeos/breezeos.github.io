@@ -1,0 +1,25 @@
+{
+    "header": {
+        "home": "Trang chủ",
+        "aboutUs": "Về chúng tôi",
+        "documentation": "Tài liệu",
+        "try": "Thử BreezeOS"
+    },
+    "body": {
+        "title": "Hoàn thành công việc của bạn.",
+        "description": "Với một bố cục hoàn toàn mới, hệ thống hiệu quả và thân thiện với người dùng được thiết kế để giúp người dùng có trải nghiệm tốt nhất khi sử dụng máy tính.",
+        "try": "Thử BreezeOS",
+        "documentation": "Tài liệu",
+        "about": {
+            "text1": "Hãy để bản thân bạn được tự do",
+            "text2": "Hành trình của chúng tôi là mang đến cho mọi người sự tự do."
+        }
+    },
+    "footer": {
+        "name": "Cộng đồng BreezeOS",
+        "pp": "Chính sách bảo mật",
+        "terms": "Điều kiện",
+        "cp": "Chính sách cookie",
+        "language": "Ngôn ngữ: Tiếng Việt"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "header": {
+        "home": "Home",
+        "aboutUs": "About us",
+        "documentation": "Documentation",
+        "try": "Try BreezeOS"
+    },
+    "body": {
+        "title": "Get your things done.",
+        "description": "With a fresh new layout, user-friendly and efficient system designed to help everyone have the best possible computing experience.",
+        "try": "Try BreezeOS",
+        "documentation": "Documentation",
+        "about": {
+            "text1": "Let yourself feel the freedom",
+            "text2": "Our journey is to give people freedom."
+        }
+    },
+    "footer": {
+        "name": "BreezeOS Community",
+        "pp": "Privacy Policy",
+        "terms": "Terms",
+        "cp": "Cookie Policy",
+        "language": "Language: English (US)"
+    }
+}
