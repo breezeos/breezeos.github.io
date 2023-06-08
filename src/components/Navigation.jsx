@@ -20,16 +20,16 @@ export default function Navigation(){
               </div>
               <div className="py-14 px-10">
                 <ul role="list">
-                  <li className="text-3xl font-bold mb-4 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
+                  <li className="text-3xl font-bold mb-8 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
                     <a href="/" onClick={() => dispatch(showNav(false))}>{t('header.home')}</a>
                   </li>
-                  <li className="text-3xl font-bold mb-4 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
+                  <li className="text-3xl font-bold mb-8 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
                     <a href="#about" onClick={() => dispatch(showNav(false))}>{t('header.aboutUs')}</a>
                   </li>
-                  <li className="text-3xl font-bold mb-4 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
+                  <li className="text-3xl font-bold mb-8 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
                     <a href="https://breezeos.github.io/docs" onClick={() => dispatch(showNav(false))}>{t('header.documentation')}</a>
                   </li>
-                  <li className="text-3xl font-bold mb-4 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
+                  <li className="text-3xl font-bold mb-8 transition-all duration-200 hover:text-[#016fff] active:text-[#016fff]">
                     <a href="https://bit.ly/breezeos" onClick={() => dispatch(showNav(false))}>{t('header.try')}</a>
                   </li>
                 </ul>
