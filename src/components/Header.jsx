@@ -11,7 +11,7 @@ export default function Header(){
     return (
         <>
             <div className="w-full py-5 px-5 md:px-14 sticky top-0 z-10 border-b border-b-slate-200 dark:border-b-slate-900 bg-gray-50 dark:bg-gray-950">
-                <div className="ml-auto mr-auto flex justify-between items-center text-gray-950 dark:text-gray-100">
+                <div className="mx-auto max-w-7xl flex justify-between items-center text-gray-700 dark:text-gray-100">
                     {themeDark ? <i className='fa-light fa-bars rounded-full flex justify-center items-center w-8 h-8 hover:bg-gray-950 hover:bg-opacity-10 hover:cursor-pointer dark:hover:bg-gray-100 dark:hover:bg-opacity-10 md:hidden' onClick={() => dispatch(showNav(true))}></i> : <i className='fa-light fa-bars rounded-full flex justify-center items-center w-8 h-8 hover:bg-gray-950 hover:bg-opacity-5 hover:cursor-pointer md:hidden' onClick={() => dispatch(showNav(true))}></i>}
                     <div className='flex items-center'>
                         <a href='/' className='text-xl font-light md:mr-8'>BreezeOS</a>

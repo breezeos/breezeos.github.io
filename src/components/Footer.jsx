@@ -26,20 +26,10 @@ export default function Footer(){
 
     const languagesRef = useRef(null);
     useOutside(languagesRef);
-
-    function enUS(){
-        setShowLanguages(false);
-        i18n.changeLanguage('enUS');
-    }
-
-    function vi(){
-        setShowLanguages(false);
-        i18n.changeLanguage('vi');
-    }
-
+    
     return (
         <div className="flex flex-col">
-            <div className="px-12 md:px-16 py-12 flex bg-gray-50 border-t border-t-slate-200 text-gray-950 dark:border-t-slate-900 dark:bg-gray-950 dark:text-gray-50">
+            <div className="px-12 md:px-16 py-12 flex bg-gray-50 border-t border-t-slate-200 text-gray-700 dark:border-t-slate-900 dark:bg-gray-950 dark:text-gray-50">
                 <div className="flex flex-col font-light">
                     <p className="text-2xl mb-8">BreezeOS</p>
                     <div className="flex text-gray-400">
@@ -52,7 +42,7 @@ export default function Footer(){
                     </div>
                 </div>
             </div>
-            <div className="px-12 md:px-16 py-5 flex flex-col lg:flex-row justify-between bg-gray-50 border-t border-t-slate-300 text-gray-950 dark:border-t-slate-900 dark:bg-gray-950 dark:text-gray-50 font-light text-xs">
+            <div className="px-12 md:px-16 py-5 flex flex-col lg:flex-row justify-between bg-gray-50 border-t border-t-slate-300 text-gray-700 dark:border-t-slate-900 dark:bg-gray-950 dark:text-gray-50 font-light text-xs">
                 <div className="flex flex-col lg:flex-row">
                     <p className="mr-12">&copy; {new Date().getFullYear()} {t('footer.name')}</p>
                     <div className="flex flex-col my-8 lg:my-0 lg:flex-row">
@@ -63,12 +53,12 @@ export default function Footer(){
                 </div>
                 <div className="flex flex-col">
                     {showLanguages ? (
-                        <div className="absolute -translate-y-20 rounded-md py-1 bg-gray-50 border border-slate-200 dark:border-slate-900 dark:bg-gray-950" ref={languagesRef}>
-                            <a className="block py-2 px-3 w-36 hover:bg-[#0171ff] hover:text-gray-50" href="javascript:void(0)" onClick={enUS}>English &#40;US&#41;</a>
-                            <a className="block py-2 px-3 w-36 hover:bg-[#0171ff] hover:text-gray-50" href="javascript:void(0)" onClick={vi}>Tiếng Việt</a>
+                        <div className="absolute -translate-y-20 rounded-md py-1 bg-gray-50 border border-slate-200 dark:border-slate-900 dark:bg-gray-950">
+                            <a className="block py-2 px-3 w-36 hover:bg-[#0171ff] hover:text-gray-50" href="javascript:void(0)" onMouseDown={() => i18n.changeLanguage('enUS')}>English &#40;US&#41;</a>
+                            <a className="block py-2 px-3 w-36 hover:bg-[#0171ff] hover:text-gray-50" href="javascript:void(0)" onMouseDown={() => i18n.changeLanguage('vi')}>Tiếng Việt</a>
                         </div>
                     ) : ''}
-                    <a href="javascript:void(0)" onClick={() => setShowLanguages(!showLanguages)} className="hover:underline hover:underline-offset-4">
+                    <a href="javascript:void(0)" onClick={() => showLanguages ? setShowLanguages(false) : setShowLanguages(true)} className="hover:underline hover:underline-offset-4" ref={languagesRef}>
                         {t('footer.language')}
                         <i className="fa-light fa-chevron-up text-xs ml-2"></i>
                     </a>
