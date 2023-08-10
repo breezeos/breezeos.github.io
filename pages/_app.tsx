@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { Router } from 'next/router'
+import { ThemeProvider } from 'next-themes'
 
 const interVar = localFont({
     src: [
@@ -41,10 +42,12 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
                 <link rel='icon' type='image/png' sizes='512x512' href='/android-chrome-512x512.png'/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
-            <div className={`dark antialiased ${interVar.className}`}>
-                <Header/>
-                <Component {...pageProps}/>
-            </div>
+            <ThemeProvider attribute='class'>
+                <div className={`antialiased ${interVar.className}`}>
+                    <Header/>
+                    <Component {...pageProps}/>
+                </div>
+            </ThemeProvider>
         </>
     )
 }
