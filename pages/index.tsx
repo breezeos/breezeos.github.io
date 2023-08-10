@@ -33,10 +33,10 @@ export default function Home() {
                 </div>
                 <div className="block max-[1150px]:hidden">
                     <div className="hidden dark:block relative w-[650px] h-[750px] max-[1364px]:w-[550px] max-[1364px]:h-[650px] pointer-events-none">
-                        <Image src='/phone-laptop.svg' fill/>
+                        <Image src='/phone-laptop.svg' alt='Phone and Laptop (Dark)' fill/>
                     </div>
                     <div className="block dark:hidden relative w-[650px] h-[750px] max-[1364px]:w-[550px] max-[1364px]:h-[650px] pointer-events-none">
-                        <Image src='/phone-laptop2.svg' fill/>
+                        <Image src='/phone-laptop2.svg' alt='Phone and Laptop (Light)' fill/>
                     </div>
                 </div>
             </div>
