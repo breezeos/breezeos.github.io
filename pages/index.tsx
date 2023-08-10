@@ -31,7 +31,7 @@ export default function Home() {
                         </button>
                     </div>
                     <div className="relative w-full h-[500px] mt-10">
-                        <Image src='/phone-laptop.svg' fill/>
+                        <Image src='/phone-laptop.svg' alt='Phone and Laptop' fill/>
                     </div>
                 </div>
             </div>
