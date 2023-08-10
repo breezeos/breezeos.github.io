@@ -39,7 +39,7 @@ export default function Try_BreezeOS(){
                 </div>
             </div>
             <Link href={platform === 'desktop' ? 'https://baodaigov.github.io/BreezeOS' : 'https://baodaigov.github.io/BreezeOS-Mobile'} passHref>
-                <Button className='rounded-lg transition-none bg-slate-900 hover:bg-slate-800 dark:bg-pink-700 dark:hover:bg-pink-600 px-6 py-4 mr-4 text-zinc-100 text-sm max-sm:text-xs font-semibold'>
+                <Button className='rounded-lg transition-none bg-slate-900 hover:bg-slate-800 dark:bg-pink-700 dark:hover:bg-pink-600 px-6 py-4 mr-4 text-zinc-100 text-sm font-semibold'>
                     <p className='mr-1'>Continue</p>
                     <BsArrowRightShort className='text-xl max-sm:text-lg'/>
                 </Button>

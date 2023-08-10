@@ -3,10 +3,8 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import localFont from 'next/font/local'
 import Header from '@/components/Header'
-import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
-import { Router } from 'next/router'
 import { ThemeProvider } from 'next-themes'
+import NextNProgress from 'nextjs-progressbar'
 
 const interVar = localFont({
     src: [
@@ -23,11 +21,6 @@ const interVar = localFont({
     ]
 });
 
-NProgress.configure({ showSpinner: false })
-Router.events.on('routeChangeStart', () => NProgress.start());
-Router.events.on('routeChangeComplete', () => NProgress.done());
-Router.events.on('routeChangeError', () => NProgress.done());
-
 export default function RootLayout({ Component, pageProps }: AppProps) {
     return (
         <>
@@ -43,6 +36,12 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <ThemeProvider attribute='class'>
+                <NextNProgress
+                    color='#f4f4f5'
+                    options={{
+                        showSpinner: false
+                    }}
+                />
                 <div className={`antialiased ${interVar.className}`}>
                     <Header/>
                     <Component {...pageProps}/>
