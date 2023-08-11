@@ -5,6 +5,7 @@ import { BsArrowRightShort } from 'react-icons/bs';
 import { BiSearch } from 'react-icons/bi';
 import { HiOutlineDesktopComputer } from 'react-icons/hi';
 import { TbShieldBolt } from 'react-icons/tb';
+import { LuChevronRight } from 'react-icons/lu';
 import Link from 'next/link';
 
 export default function Home() {
@@ -42,46 +43,18 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="bg-white text-slate-900 dark:bg-zinc-950 dark:text-slate-100 py-28 px-6">
-                <div className="max-w-4xl max-md:max-w-lg mx-auto flex flex-col">
-                    <div className='font-extrabold text-5xl max-md:text-4xl tracking-tight leading-tight mb-6 text-center'>
-                        <span>Why you should choose </span>
-                        <span className='text-sky-500 dark:text-pink-600'>BreezeOS</span>
-                        <span> as your new operating system.</span>
+            <div className="bg-zinc-100 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 py-40 px-8">
+                <div className="max-w-5xl mx-auto flex flex-col items-center">
+                    <div className="text-center mb-16">
+                        <p className="font-extrabold text-6xl max-[1364px]:text-5xl tracking-tight mb-7">Privacy. Absolutely.</p>
+                        <p className="text-zinc-500 text-lg max-w-3xl mx-auto">
+                            All of your information, messages, contacts, photos and videos will not be stored in the server as we don't have a database, so you don't have to be worried.
+                        </p>
                     </div>
-                    {/* <div className="flex justify-around my-10">
-                        <ul className="flex flex-col">
-                            <li className="text-sm my-4">
-                                <div className="relative rounded-lg bg-indigo-600 w-80 p-6 flex flex-col text-slate-100">
-                                    <div className='w-14 h-14 bg-slate-50 rounded-full flex justify-center items-center text-2xl text-indigo-600 mb-6'>
-                                        <HiOutlineDesktopComputer/>
-                                    </div>
-                                    <p className='font-semibold text-base mb-2'>User-friendly UI</p>
-                                    <p className='text-slate-100/40'>Give your device a fresh new layout. Simple and very easy to use.</p>
-                                </div>
-                            </li>
-                            <li className="text-sm my-4">
-                                <div className="relative rounded-lg bg-red-400 w-80 p-6 flex flex-col text-slate-100">
-                                    <div className='w-14 h-14 bg-slate-50 rounded-full flex justify-center items-center text-2xl text-red-400 mb-6'>
-                                        <TbShieldBolt/>
-                                    </div>
-                                    <p className='font-semibold text-base mb-2'>Privacy</p>
-                                    <p className='text-slate-100/40'>All of your information, messages, contacts, photos and videos will not be stored in the server as we don't have a database, so you don't have to be worried.</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul className='h-full'>
-                            <li className="text-sm my-4 h-full">
-                                <div className="relative rounded-lg bg-emerald-500 w-80 p-6 flex flex-col text-slate-100">
-                                    <div className='w-14 h-14 bg-slate-50 rounded-full flex justify-center items-center text-2xl text-emerald-500 mb-6'>
-                                        <TbShieldBolt/>
-                                    </div>
-                                    <p className='font-semibold text-base mb-2'>Privacy</p>
-                                    <p className='text-slate-100/40'>Give your device a fresh new layout. Simple and very easy to use.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> */}
+                    <Link href='/privacy' passHref className="rounded-full transition-all duration-300 bg-zinc-950/5 text-zinc-900 active:bg-zinc-950/10 dark:bg-zinc-100/5 dark:text-zinc-100 dark:active:bg-zinc-100/10 active:transition-none py-3 px-4 flex items-center">
+                        <p className="font-semibold mr-1 text-sm">Learn more</p>
+                        <LuChevronRight/>
+                    </Link>
                 </div>
             </div>
         </>
