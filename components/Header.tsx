@@ -34,7 +34,7 @@ export default function Header(){
 
     return (
         <>
-            <div className="absolute w-full flex justify-between items-center py-6 px-14 max-md:px-6 text-zinc-900 dark:text-zinc-100">
+            <div className="absolute w-full flex justify-between items-center py-6 px-14 max-md:px-6 text-slate-900 dark:text-slate-100">
                 <Link href='/' passHref>
                     <svg className="w-[219px] h-[26px] hidden dark:block" viewBox="0 0 219 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_1_3)">
@@ -72,17 +72,17 @@ export default function Header(){
                     </div>
                 </div>
                 <div className="hidden max-md:flex">
-                    <Button className="p-2 text-zinc-900 dark:text-zinc-100" onClick={() => setNavOpened(!navOpened)}>
+                    <Button className="p-2 text-slate-900 dark:text-slate-100" onClick={() => setNavOpened(!navOpened)}>
                         <BiSearch className='text-lg'/>
                     </Button>
-                    <Button className="p-2 text-zinc-900 dark:text-zinc-100" onClick={() => setNavOpened(!navOpened)}>
+                    <Button className="p-2 text-slate-900 dark:text-slate-100" onClick={() => setNavOpened(!navOpened)}>
                         <TbMenu className='text-lg'/>
                     </Button>
                 </div>
             </div>
-            <div className={`absolute top-0 left-0 bottom-0 right-0 w-full h-full backdrop-blur hidden ${navOpened && 'max-md:block'}`}>
-                <div className='h-full px-8 py-14'>
-                    <div className="relative h-full rounded-lg ring-1 bg-zinc-100 ring-zinc-200 text-zinc-900 dark:bg-zinc-950 dark:ring-zinc-900 dark:text-zinc-300" ref={addCallerMenuRef}>
+            <div className={`absolute top-0 left-0 bottom-0 right-0 z-10 w-full h-full backdrop-blur hidden ${navOpened && 'max-md:block'}`}>
+                <div className='h-full px-8 py-32'>
+                    <div className="relative h-full rounded-lg ring-1 bg-zinc-100 ring-zinc-200 text-slate-900 dark:bg-zinc-950 dark:ring-zinc-900 dark:text-zinc-300" ref={addCallerMenuRef}>
                         <div className="absolute w-full h-full p-8">
                             <Link href='https://github.com/baodaigov/BreezeOS' className="pb-4" passHref>
                                 <div className="text-lg">

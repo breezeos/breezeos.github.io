@@ -36,12 +36,12 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <ThemeProvider attribute='class'>
-                <NextNProgress
-                    color='#f4f4f5'
-                    options={{
-                        showSpinner: false
-                    }}
-                />
+                    <NextNProgress
+                        color='#f4f4f5'
+                        options={{
+                            showSpinner: false
+                        }}
+                    />
                 <div className={`antialiased ${interVar.className}`}>
                     <Header/>
                     <Component {...pageProps}/>
