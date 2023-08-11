@@ -47,9 +47,7 @@ export default function Home() {
                 <div className="max-w-5xl mx-auto flex flex-col items-center">
                     <div className="text-center mb-16">
                         <p className="font-extrabold text-6xl max-[1364px]:text-5xl tracking-tight mb-7">Privacy. Absolutely.</p>
-                        <p className="text-zinc-500 text-lg max-w-3xl mx-auto">
-                            All of your information, messages, contacts, photos and videos will not be stored in the server as we don't have a database, so you don't have to be worried.
-                        </p>
+                        <p className="text-zinc-500 text-lg max-w-3xl mx-auto">All of your information, messages, contacts, photos and videos will not be stored in the server as we don't have a database, so you don't have to be worried.</p>
                     </div>
                     <Link href='/privacy' passHref className="rounded-full transition-all duration-300 bg-zinc-950/5 text-zinc-900 active:bg-zinc-950/10 dark:bg-zinc-100/5 dark:text-zinc-100 dark:active:bg-zinc-100/10 active:transition-none py-3 px-4 flex items-center">
                         <p className="font-semibold mr-1 text-sm">Learn more</p>
