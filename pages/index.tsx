@@ -7,11 +7,24 @@ import { HiOutlineDesktopComputer } from 'react-icons/hi';
 import { TbShieldBolt } from 'react-icons/tb';
 import { LuChevronRight } from 'react-icons/lu';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export default function Home() {
+    const [scrollY, setScrollY] = useState<number>(0);
     const [textDisplayed, setTextDisplayed] = useState<boolean>(false);
+
+    function onScroll(){
+        console.log(scrollY);
+        setScrollY(window.scrollY)
+    }
+  
+    useEffect(() => {
+        window.addEventListener("scroll", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+        }
+    }, [scrollY]);
 
     return (
         <>
@@ -47,7 +60,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="relative bg-zinc-100 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 py-40 px-8">
+            <div className="relative bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 py-40 px-8">
                 <div className="absolute top-0 left-0 m-14 max-sm:m-8">
                     {textDisplayed && (
                         <Button className="p-2 bg-zinc-900 text-zinc-100 active:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:active:bg-zinc-300 transition-none" onClick={() => setTextDisplayed(false)}>
@@ -85,6 +98,36 @@ export default function Home() {
                             <p className='text-2xl font-semibold text-zinc-100/20'>This video is private.</p>
                         </div>
                         <iframe src="https://www.youtube.com/embed/GAhB63bsElA" className='w-full h-full' frameBorder={0}/>
+                    </div>
+                </div>
+            </div>
+            <div className="flex justify-center items-center bg-slate-100 dark:bg-slate-950 h-[780px]">
+                <div
+                    className={twMerge(
+                        "w-[70%] h-[70%] opacity-0 rounded-3xl py-40 bg-slate-200 text-zinc-900 dark:bg-slate-900 dark:text-zinc-100 flex flex-col justify-center items-center transition-all duration-300",
+                        scrollY > 1480 && "w-[75%] h-[75%] opacity-100",
+                        scrollY > 1730 && "rounded-none w-full h-full",
+                    )}
+                >
+                    <div className='font-extrabold text-5xl tracking-tight text-center mb-16'>
+                        <span>Purpose of creating </span>
+                        <span className='text-sky-500'>BreezeOS</span>
+                    </div>
+                    <div className="w-full flex justify-center items-center space-x-4">
+                        <div className="relative w-14 h-14">
+                            <Image alt='Cyprus Lucastero' className='rounded-full' src='/cyplucastero.jpeg' fill/>
+                        </div>
+                        <div>
+                            <p className='font-semibold mb-1'>Cyprus Lucastero</p>
+                            <div className="text-slate-600 text-sm">Creator of BreezeOS</div>
+                        </div>
+                    </div>
+                    <div className="mt-6 text-lg max-w-3xl text-center text-slate-500">
+                        <span>Our community is created to </span>
+                        <span className='font-semibold text-sky-500'>give a user-friendly and lightweight user interface </span>
+                        <span> for everyone's device, make it very easy to use. We are currently working hard on these projects and we believe that </span>
+                        <span className="font-semibold text-sky-500">this will change the way you use computers</span>
+                        <span>. It's worth to give yourself a chance.</span>
                     </div>
                 </div>
             </div>
