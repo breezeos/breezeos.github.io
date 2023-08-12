@@ -103,11 +103,7 @@ export default function Home() {
             </div>
             <div className="flex justify-center items-center bg-slate-100 dark:bg-slate-950 h-[780px]">
                 <div
-                    className={twMerge(
-                        "w-[70%] h-[70%] opacity-0 rounded-3xl py-40 bg-slate-200 text-zinc-900 dark:bg-slate-900 dark:text-zinc-100 flex flex-col justify-center items-center transition-all duration-300",
-                        scrollY > 1480 && "w-[75%] h-[75%] opacity-100",
-                        scrollY > 1730 && "rounded-none w-full h-full",
-                    )}
+                    className="w-[75%] h-[80%] max-lg:w-[90%] rounded-3xl hover:rounded-none hover:w-full hover:h-full py-40 px-6 bg-slate-200 text-zinc-900 dark:bg-slate-900 dark:text-zinc-100 flex flex-col justify-center items-center transition-all duration-300"
                 >
                     <div className='font-extrabold text-5xl tracking-tight text-center mb-16'>
                         <span>Purpose of creating </span>
@@ -122,7 +118,7 @@ export default function Home() {
                             <div className="text-slate-600 text-sm">Creator of BreezeOS</div>
                         </div>
                     </div>
-                    <div className="mt-6 text-lg max-w-3xl text-center text-slate-500">
+                    <div className="mt-6 text-lg max-sm:text-base max-w-3xl text-center text-slate-500">
                         <span>Our community is created to </span>
                         <span className='font-semibold text-sky-500'>give a user-friendly and lightweight user interface </span>
                         <span> for everyone's device, make it very easy to use. We are currently working hard on these projects and we believe that </span>
