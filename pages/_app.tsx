@@ -37,7 +37,7 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
             </Head>
             <ThemeProvider attribute='class'>
                     <NextNProgress
-                        color='#f4f4f5'
+                        color='#2563eb'
                         options={{
                             showSpinner: false
                         }}

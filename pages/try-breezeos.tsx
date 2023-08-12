@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SlScreenDesktop } from 'react-icons/sl';
 import { PiDeviceMobileCamera } from 'react-icons/pi';
 import Link from "next/link";
@@ -9,6 +9,13 @@ import { twMerge } from "tailwind-merge";
 export default function Try_BreezeOS(){
     const [platform, setPlatform] = useState<"desktop" | "mobile">("desktop");
     const [loading, setLoading] = useState<boolean>(false);
+    const [textShown, setTextShown] = useState<boolean>(false);
+
+    useEffect(() => {
+        if(loading){
+            setTimeout(() => setTextShown(true), 4000);
+        }
+    }, [loading]);
 
     return (
         <>
@@ -47,17 +54,15 @@ export default function Try_BreezeOS(){
                     </Button>
                 </Link>
             </div>
-            {platform === "desktop" ? (
-                <div className={twMerge(
-                    'absolute top-0 left-0 bottom-0 right-0 bg-[#2b2b2b] z-10 m-auto w-[90%] h-[90%] transition-all duration-300 opacity-0 pointer-events-none',
-                    loading && 'w-full h-full opacity-100 pointer-events-auto'
-                )}></div>
-            ) : (
-                <div className={twMerge(
-                    'absolute top-0 left-0 bottom-0 right-0 bg-black z-10 m-auto w-[90%] h-[90%] transition-all duration-300 opacity-0 pointer-events-none',
-                    loading && 'w-full h-full opacity-100 pointer-events-auto'
-                )}></div>
-            )}
+            <div className={twMerge(
+                `absolute top-0 left-0 bottom-0 right-0 ${platform === 'desktop' ? 'bg-[#2b2b2b]' : 'bg-black'} z-10 m-auto w-[90%] h-[90%] flex justify-center items-center text-center transition-all duration-300 opacity-0 pointer-events-none`,
+                loading && 'w-full h-full opacity-100 pointer-events-auto'
+            )}>
+                <p className={twMerge(
+                    'leading-loose transition-all duration-500 opacity-0 pointer-events-none',
+                    textShown && 'opacity-100'
+                )}>Please be patient while we're trying to redirect you.<br/>You may need to check your Internet connection.</p>
+            </div>
         </>
     )
 }
