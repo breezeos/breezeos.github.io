@@ -7,6 +7,8 @@ import { LuChevronRight } from 'react-icons/lu';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function Home() {
     const [textDisplayed, setTextDisplayed] = useState<boolean>(false);
@@ -16,6 +18,7 @@ export default function Home() {
             <Head>
                 <title>BreezeOS Community</title>
             </Head>
+            <Header/>
             <div className='bg-no-repeat bg-right w-full flex justify-between max-[1150px]:justify-center py-20 max-md:px-6 max-[1150px]:py-40 bg-gradient-to-t from-sky-300 to-zinc-100 dark:from-[#270013] dark:to-zinc-950 text-slate-900 dark:text-slate-100'>
                 <div className="w-[650px] max-[1364px]:w-[550px] flex flex-col justify-center ml-16 max-[1364px]:ml-12 max-[1150px]:text-center max-[1150px]:m-0">
                     <p className='font-extrabold text-6xl max-[1364px]:text-5xl tracking-tight mb-6'>For a better desktop.</p>
@@ -105,6 +108,10 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <div className="bg-zinc-100 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 py-28">
+                <p className='font-extrabold text-5xl px-20 mb-8'>Latest Blog</p>
+            </div>
+            <Footer/>
         </>
     )
 }

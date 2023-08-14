@@ -39,6 +39,10 @@ export default function Header(){
         href: string
     }[] = [
         {
+            name: 'Blog',
+            href: '/blog'
+        },
+        {
             name: 'Docs',
             href: '/docs'
         },

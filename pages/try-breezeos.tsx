@@ -5,6 +5,7 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import { BsArrowRightShort } from "react-icons/bs";
 import { twMerge } from "tailwind-merge";
+import Header from "@/components/Header";
 
 export default function Try_BreezeOS(){
     const [platform, setPlatform] = useState<"desktop" | "mobile">("desktop");
@@ -19,6 +20,7 @@ export default function Try_BreezeOS(){
 
     return (
         <>
+            <Header/>
             <div className='h-screen text-center flex flex-auto flex-col justify-center items-center bg-gradient-to-t from-sky-300 to-zinc-100 text-slate-900 dark:from-[#270013] dark:to-zinc-950 dark:text-slate-100'>
                 <p className="font-extrabold text-6xl max-[1364px]:text-5xl max-md:text-4xl tracking-tight mb-10">Select an option</p>
                 <div className="flex justify-center items-center max-md:flex-col mb-12 h-56 max-md:h-auto">

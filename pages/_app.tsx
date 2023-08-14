@@ -2,7 +2,6 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import localFont from 'next/font/local'
-import Header from '@/components/Header'
 import { ThemeProvider } from 'next-themes'
 import NextNProgress from 'nextjs-progressbar'
 
@@ -43,7 +42,6 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
                         }}
                     />
                 <div className={`antialiased ${interVar.className}`}>
-                    <Header/>
                     <Component {...pageProps}/>
                 </div>
             </ThemeProvider>
