@@ -9,20 +9,7 @@ import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export default function Home() {
-    const [scrollY, setScrollY] = useState<number>(0);
     const [textDisplayed, setTextDisplayed] = useState<boolean>(false);
-
-    function onScroll(){
-        console.log(scrollY);
-        setScrollY(window.scrollY)
-    }
-  
-    useEffect(() => {
-        window.addEventListener("scroll", onScroll);
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-        }
-    }, [scrollY]);
 
     return (
         <>

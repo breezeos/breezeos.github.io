@@ -84,7 +84,7 @@ export default function Header(){
                 <div className="flex items-center max-md:hidden">
                     <div className="flex space-x-8 mr-8">
                         {navItems.map(i => (
-                            <Link href={i.href} className="font-semibold text-sm text-slate-900 dark:text-slate-100 hover:text-sky-500 dark:hover:text-pink-600">{i.name}</Link>
+                            <Link href={i.href} className="font-semibold text-sm text-slate-900 dark:text-slate-100 hover:text-sky-500 dark:hover:text-pink-600" key={Math.random()}>{i.name}</Link>
                         ))}
                     </div>
                     <Button className='p-2 max-md:p-1 mr-2 active:bg-sky-600/20 dark:active:bg-pink-900/20' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
@@ -112,7 +112,7 @@ export default function Header(){
                         <div className="absolute w-full h-full p-8">
                             <div className="space-y-6 mb-6">
                                 {navItems.map(i => (
-                                    <Link href={i.href} className="block" passHref>
+                                    <Link href={i.href} className="block" passHref key={Math.random()}>
                                         <div className="text-lg">
                                             <p className='font-semibold active:text-sky-600 dark:active:text-pink-700'>{i.name}</p>
                                         </div>
