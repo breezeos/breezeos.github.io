@@ -8,6 +8,8 @@ import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
+import { LuChevronDown } from "react-icons/lu";
+import { twMerge } from "tailwind-merge";
 
 export default function Header(){
     const {theme, setTheme} = useTheme();
@@ -32,9 +34,31 @@ export default function Header(){
     const addCallerMenuRef = useRef(null);
     useOutsideNav(addCallerMenuRef);
 
+    const navItems: {
+        name: string
+        href: string
+    }[] = [
+        {
+            name: 'Docs',
+            href: '/docs'
+        },
+        {
+            name: 'Downloads',
+            href: '/downloads'
+        },
+        {
+            name: 'Design',
+            href: '/design'
+        },
+        {
+            name: 'Support',
+            href: '/support'
+        },
+    ]
+
     return (
         <>
-            <div className="absolute w-full flex justify-between items-center py-6 px-14 max-md:px-6 text-slate-900 dark:text-slate-100">
+            <div className="absolute z-10 w-full flex justify-between items-center py-7 px-12 max-md:px-6 text-slate-900 dark:text-slate-100">
                 <Link href='/' passHref>
                     <svg className="w-[219px] h-[26px] hidden dark:block" viewBox="0 0 219 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_1_3)">
@@ -58,7 +82,12 @@ export default function Header(){
                     </svg>
                 </Link>
                 <div className="flex items-center max-md:hidden">
-                    <Button className='p-2 max-md:p-1 mr-1 active:bg-sky-600/20 dark:active:bg-pink-900/20' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                    <div className="flex space-x-8 mr-8">
+                        {navItems.map(i => (
+                            <Link href={i.href} className="font-semibold text-sm text-slate-900 dark:text-slate-100 hover:text-sky-500 dark:hover:text-pink-600">{i.name}</Link>
+                        ))}
+                    </div>
+                    <Button className='p-2 max-md:p-1 mr-2 active:bg-sky-600/20 dark:active:bg-pink-900/20' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
                         <HiOutlineSun className='text-xl max-md:text-lg text-sky-600 block dark:hidden'/>
                         <HiOutlineMoon className='text-xl max-md:text-lg text-pink-700 hidden dark:block'/>
                     </Button>
@@ -67,12 +96,9 @@ export default function Header(){
                             <VscGithub className='text-xl max-md:text-lg'/>
                         </Button>
                     </Link>
-                    <div className="block ml-4 max-md:hidden">
-                        <SearchBar/>
-                    </div>
                 </div>
                 <div className="hidden max-md:flex">
-                    <Button className="p-2 text-slate-900 dark:text-slate-100" onClick={() => setNavOpened(!navOpened)}>
+                    <Button className="p-2 text-slate-900 dark:text-slate-100">
                         <BiSearch className='text-lg'/>
                     </Button>
                     <Button className="p-2 text-slate-900 dark:text-slate-100" onClick={() => setNavOpened(!navOpened)}>
@@ -82,13 +108,22 @@ export default function Header(){
             </div>
             <div className={`absolute top-0 left-0 bottom-0 right-0 z-10 w-full h-full backdrop-blur hidden ${navOpened && 'max-md:block'}`}>
                 <div className='h-full px-8 py-32'>
-                    <div className="relative h-full rounded-lg ring-1 bg-zinc-100 ring-zinc-200 text-slate-900 dark:bg-zinc-950 dark:ring-zinc-900 dark:text-zinc-300" ref={addCallerMenuRef}>
+                    <div className="relative h-full rounded-lg ring-1 bg-zinc-100 ring-zinc-200 text-slate-900 dark:bg-zinc-950 dark:ring-zinc-900 dark:text-zinc-300">
                         <div className="absolute w-full h-full p-8">
-                            <Link href='https://github.com/baodaigov/BreezeOS' className="pb-4" passHref>
-                                <div className="text-lg">
-                                    <p className='font-semibold active:text-sky-600 dark:active:text-pink-700'>GitHub</p>
-                                </div>
-                            </Link>
+                            <div className="space-y-6 mb-6">
+                                {navItems.map(i => (
+                                    <Link href={i.href} className="block" passHref>
+                                        <div className="text-lg">
+                                            <p className='font-semibold active:text-sky-600 dark:active:text-pink-700'>{i.name}</p>
+                                        </div>
+                                    </Link>
+                                ))}
+                                <Link href='https://github.com/baodaigov/BreezeOS' className="block" passHref>
+                                    <div className="text-lg">
+                                        <p className='font-semibold active:text-sky-600 dark:active:text-pink-700'>GitHub</p>
+                                    </div>
+                                </Link>
+                            </div>
                             <div className="text-sm mt-4 pt-6 border-t border-solid border-zinc-200 dark:border-zinc-900">
                                 <div className="flex justify-between items-center">
                                     <p>Switch theme</p>

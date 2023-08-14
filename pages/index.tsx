@@ -2,12 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Button from '@/components/Button';
 import { BsArrowRightShort } from 'react-icons/bs';
-import { BiSearch, BiSolidLockAlt, BiSolidLockOpenAlt } from 'react-icons/bi';
-import { HiOutlineDesktopComputer } from 'react-icons/hi';
-import { TbShieldBolt } from 'react-icons/tb';
+import { BiSearch } from 'react-icons/bi';
 import { LuChevronRight } from 'react-icons/lu';
 import Link from 'next/link';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export default function Home() {
@@ -61,13 +59,6 @@ export default function Home() {
                 </div>
             </div>
             <div className="relative bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 py-40 px-8">
-                <div className="absolute top-0 left-0 m-14 max-sm:m-8">
-                    {textDisplayed && (
-                        <Button className="p-2 bg-zinc-900 text-zinc-100 active:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:active:bg-zinc-300 transition-none" onClick={() => setTextDisplayed(false)}>
-                            <BiSolidLockOpenAlt/>
-                        </Button>
-                    )}
-                </div>
                 <div className="max-w-5xl mx-auto flex flex-col items-center">
                     <div className="text-center mb-8">
                         <div className="flex max-[520px]:flex-col justify-center items-center font-extrabold text-6xl max-[1364px]:text-5xl tracking-tight mb-6 h-16 max-[520px]:h-28 select-none">
@@ -121,7 +112,7 @@ export default function Home() {
                     <div className="mt-6 text-lg max-sm:text-base max-w-3xl text-center text-slate-500">
                         <span>Our community is created to </span>
                         <span className='font-semibold text-sky-500'>give a user-friendly and lightweight user interface </span>
-                        <span> for everyone's device, make it very easy to use. We are currently working hard on these projects and we believe that </span>
+                        <span> for everyone's device, make it very easy to use. We are currently working hard on these projects and we do keep in mind that </span>
                         <span className="font-semibold text-sky-500">this will change the way you use computers</span>
                         <span>. It's worth to give yourself a chance.</span>
                     </div>
