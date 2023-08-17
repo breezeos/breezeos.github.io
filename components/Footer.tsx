@@ -28,10 +28,10 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} BreezeOS Community
           </p>
           <div className="flex items-center space-x-4 max-md:mb-10">
-            <Link href="https://youtube.com/@breezeos" className="text-2xl">
+            <Link href="https://youtube.com/@breezeos" target="_blank" className="text-2xl">
               <FaYoutube />
             </Link>
-            <Link href="https://youtube.com/@breezeos" className="text-2xl">
+            <Link href="https://twitter.com/BreezeOS_" target="_blank" className="text-2xl">
               𝕏
             </Link>
           </div>

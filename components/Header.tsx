@@ -117,7 +117,7 @@ export default function Header() {
             <HiOutlineSun className="block text-xl text-sky-600 dark:hidden max-md:text-lg" />
             <HiOutlineMoon className="hidden text-xl text-pink-700 dark:block max-md:text-lg" />
           </Button>
-          <Link href="https://github.com/baodaigov/BreezeOS" passHref>
+          <Link href="https://github.com/baodaigov/BreezeOS" target="_blank" passHref>
             <Button className="p-2 active:bg-sky-600/20 dark:active:bg-pink-900/20 max-md:p-1">
               <VscGithub className="text-xl max-md:text-lg" />
             </Button>
@@ -164,6 +164,7 @@ export default function Header() {
                 <Link
                   href="https://github.com/baodaigov/BreezeOS"
                   className="block"
+                  target="_blank"
                   passHref
                 >
                   <div className="text-lg">
