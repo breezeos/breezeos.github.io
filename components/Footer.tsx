@@ -6,25 +6,27 @@ export default function Footer() {
     name: string;
     href: string;
   }[] = [
-      {
-        name: "Contact",
-        href: "/contact",
-      },
-      {
-        name: "Legals",
-        href: "/blabla",
-      },
-      {
-        name: "Improve this site",
-        href: "https://github.com/breezeos/breezeos.github.io/issues/new",
-      },
-    ];
+    {
+      name: "Contact",
+      href: "/contact",
+    },
+    {
+      name: "Legals",
+      href: "/blabla",
+    },
+    {
+      name: "Improve this site",
+      href: "https://github.com/breezeos/breezeos.github.io/issues/new",
+    },
+  ];
 
   return (
-    <div className="bg-zinc-50 text-zinc-900 dark:bg-[#101013] dark:text-zinc-100 py-16">
-      <div className="grid grid-cols-10 max-md:grid-cols-5 px-7 max-w-7xl mx-auto">
-        <div className="flex flex-col justify-between col-span-5">
-          <p className="mb-5">&copy; {new Date().getFullYear()} BreezeOS Community</p>
+    <div className="bg-zinc-50 py-16 text-zinc-900 dark:bg-[#101013] dark:text-zinc-100">
+      <div className="mx-auto grid max-w-7xl grid-cols-10 px-7 max-md:grid-cols-5">
+        <div className="col-span-5 flex flex-col justify-between">
+          <p className="mb-5">
+            &copy; {new Date().getFullYear()} BreezeOS Community
+          </p>
           <div className="flex items-center space-x-4 max-md:mb-10">
             <Link href="https://youtube.com/@breezeos" className="text-2xl">
               <FaYoutube />
@@ -34,8 +36,8 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col items-end text-right max-md:items-start max-md:text-left col-span-5">
-          <div className="flex space-x-6 max-md:flex-col max-md:space-x-0 max-md:space-y-4 mb-10">
+        <div className="col-span-5 flex flex-col items-end text-right max-md:items-start max-md:text-left">
+          <div className="mb-10 flex space-x-6 max-md:flex-col max-md:space-x-0 max-md:space-y-4">
             {navItems.map((i) => (
               <Link
                 href={i.href}
@@ -92,5 +94,5 @@ export default function Footer() {
         </div>
       </div>
     </div>
-  )
+  );
 }

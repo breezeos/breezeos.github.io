@@ -18,7 +18,7 @@ export default function Home() {
     description: string;
     date: string;
     image: any;
-    link: string
+    link: string;
   }
 
   const BlogContainer = ({
@@ -26,22 +26,26 @@ export default function Home() {
     description,
     date,
     image,
-    link
+    link,
   }: BlogContainerProps) => {
     return (
       <div
-        className="mx-auto h-[630px] w-full overflow-hidden rounded-3xl bg-cover bg-repeat bg-center"
+        className="mx-auto h-[630px] w-full overflow-hidden rounded-3xl bg-cover bg-center bg-repeat max-sm:h-[700px] max-sm:rounded-none"
         style={{ backgroundImage: `url(${image})` }}
       >
-        <div className="flex h-full w-full flex-col-reverse bg-black/70 p-16 max-md:px-8 text-zinc-100">
-          <Link href={link} className="flex">
-            <Button className="bg-zinc-100 px-5 py-3 text-sm text-zinc-900 active:bg-zinc-300">
-              <p className="mr-1 font-semibold">Read more</p>
-              <LuChevronRight className="text-base" />
-            </Button>
-          </Link>
-          <p className="mb-6">{description}</p>
-          <p className="mb-6 text-5xl max-md:text-4xl font-extrabold">{name}</p>
+        <div className="flex h-full w-full flex-col-reverse bg-black/70 p-16 text-zinc-100 max-md:px-9">
+          <div className="flex items-center">
+            <p>{date}</p>
+            <div className="h-6 w-px bg-yellow-500 mx-6"></div>
+            <Link href={link}>
+              <Button className="bg-zinc-100 px-5 py-3 text-sm text-zinc-900 active:bg-zinc-300">
+                <p className="mr-1 font-semibold">Read more</p>
+                <LuChevronRight className="text-base" />
+              </Button>
+            </Link>
+          </div>
+          <p className="mb-10">{description}</p>
+          <p className="mb-6 text-5xl font-extrabold max-md:text-4xl">{name}</p>
         </div>
       </div>
     );
@@ -147,7 +151,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex h-[780px] items-center justify-center bg-slate-100 dark:bg-slate-950">
-        <div className="flex h-[80%] w-[75%] flex-col items-center justify-center rounded-3xl max-sm:rounded-none max-sm:w-full max-sm:h-full bg-slate-200 px-6 py-40 text-zinc-900 transition-all duration-300 hover:h-full hover:w-full hover:rounded-none dark:bg-slate-900 dark:text-zinc-100 max-lg:w-[90%]">
+        <div className="flex h-[80%] w-[75%] flex-col items-center justify-center rounded-3xl bg-slate-200 px-6 py-40 text-zinc-900 transition-all duration-300 hover:h-full hover:w-full hover:rounded-none dark:bg-slate-900 dark:text-zinc-100 max-lg:w-[90%] max-sm:h-full max-sm:w-full max-sm:rounded-none">
           <div className="mb-16 text-center text-5xl font-extrabold tracking-tight">
             <span>Purpose of creating </span>
             <span className="text-sky-500">BreezeOS</span>
@@ -183,9 +187,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="space-y-6 bg-zinc-100 py-28 px-4 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
-        <div className="max-w-7xl mx-auto">
-          <p className="mb-10 max-xl:px-4 text-5xl font-extrabold">Latest Blog</p>
+      <div className="space-y-6 bg-zinc-100 px-4 py-28 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 max-md:py-24 max-sm:px-0">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-10 text-5xl font-extrabold max-xl:px-4 max-sm:px-7">
+            Latest Blog
+          </p>
           <BlogContainer
             name="Welcome to BreezeOS"
             date="1/1/1970"
