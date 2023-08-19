@@ -4,6 +4,7 @@ import Head from "next/head";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import NextNProgress from "nextjs-progressbar";
+import Header from "@/components/Header";
 
 const interVar = localFont({
   src: [
@@ -62,6 +63,7 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
           }}
         />
         <div className={`antialiased ${interVar.className}`}>
+          <Header />
           <Component {...pageProps} />
         </div>
       </ThemeProvider>

@@ -1,10 +1,8 @@
-import Header from "@/components/Header";
 import Link from "next/link";
 
 export default function Error() {
   return (
     <>
-      <Header />
       <div className="flex h-screen w-full flex-col items-center justify-center bg-zinc-100 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <div className="mb-10 flex items-center max-sm:flex-col">
           <p className="text-2xl font-bold max-sm:mb-4 max-sm:text-4xl">404</p>

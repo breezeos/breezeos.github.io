@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -7,7 +6,7 @@ import { LuChevronRight } from "react-icons/lu";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import Header from "@/components/Header";
+import Head from "next/head";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -56,7 +55,6 @@ export default function Home() {
       <Head>
         <title>BreezeOS Community</title>
       </Head>
-      <Header />
       <div className="flex w-full justify-between bg-gradient-to-t from-sky-300 to-zinc-100 bg-right bg-no-repeat py-20 text-slate-900 dark:from-[#270013] dark:to-zinc-950 dark:text-slate-100 max-[1150px]:justify-center max-[1150px]:py-40 max-md:px-6">
         <div className="ml-16 flex w-[650px] flex-col justify-center max-[1364px]:ml-12 max-[1364px]:w-[550px] max-[1150px]:m-0 max-[1150px]:text-center">
           <p className="mb-6 text-6xl font-extrabold tracking-tight max-[1364px]:text-5xl">
