@@ -44,7 +44,7 @@ export default function Home() {
             </Link>
           </div>
           <p className="mb-10">{description}</p>
-          <p className="mb-6 text-5xl font-extrabold max-md:text-4xl">{name}</p>
+          <p className="mb-6 text-5xl font-extrabold tracking-tight max-md:text-4xl">{name}</p>
         </div>
       </div>
     );
